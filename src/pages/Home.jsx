@@ -1,9 +1,18 @@
-import React from 'react'
+import React, { useCallback } from 'react';
+import { signOut } from 'firebase/auth';
+import { auth } from '../firebase/firebase';
 
 const Home = () => {
-  return (
-    <div>Home</div>
-  )
-}
+  const handleSignOut = useCallback(() => {
+    signOut(auth);
+  }, []);
 
-export default Home
+  return (
+    <div>
+      <h1>Welcome to Home Page</h1>
+      <button onClick={handleSignOut}>Sign Out</button>
+    </div>
+  );
+};
+
+export default Home;
