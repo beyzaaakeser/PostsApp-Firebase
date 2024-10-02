@@ -4,6 +4,7 @@ import { auth } from '../firebase/firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import Loader from '../components/Loader';
 import Posts from '../components/Posts';
+import AddPost from '../components/AddPost';
 const Home = () => {
   const [user, isLoading] = useAuthState(auth);
   const handleSignOut = useCallback(() => {
@@ -25,6 +26,7 @@ const Home = () => {
           Sign Out
         </button>
       </div>
+      <AddPost/>
       <Posts/>
     </div>
   );
