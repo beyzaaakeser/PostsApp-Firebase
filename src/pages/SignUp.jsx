@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react';
-import { signInWithEmailAndPassword } from 'firebase/auth';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../firebase/firebase';
 import { toast } from 'react-toastify';
 const SignUp = () => {
@@ -9,7 +9,7 @@ const SignUp = () => {
     (e) => {
       e.preventDefault();
       if (!email || !password) return;
-      signInWithEmailAndPassword(auth, email, password)
+      createUserWithEmailAndPassword(auth, email, password)
         .then(() => {
           toast.success('You have signed up successfully!');
         })
