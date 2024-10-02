@@ -39,6 +39,7 @@ const SignIn = () => {
           placeholder="Enter your password"
           className="p-4 bg-gray-100 rounded-md "
         />
+        <Link to="/forgot-password" className='text-blue-700 text-sm text-end'>Forgot password?</Link>
         <input
           type="submit"
           value='Sign In'
