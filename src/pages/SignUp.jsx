@@ -2,6 +2,7 @@ import React, { useCallback, useState } from 'react';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../firebase/firebase';
 import { toast } from 'react-toastify';
+import { Link } from 'react-router-dom';
 const SignUp = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -40,9 +41,13 @@ const SignUp = () => {
         />
         <input
           type="submit"
-          className="p-4 bg-green-200 rounded-md cursor-pointer"
+          value='Sign Up'
+          className="p-4 bg-green-200 rounded-md cursor-pointer mb-4"
         />
       </form>
+      <Link to="/sign-in" className="text-blue-700 ">
+        Already have an account? Sign in
+      </Link>
     </div>
   );
 };
