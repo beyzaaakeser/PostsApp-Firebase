@@ -10,6 +10,7 @@ const AddPost = () => {
     (e) => {
       e.preventDefault();
       addDoc(ref, { body: body });
+      setBody('');
     },
     [body]
   );
